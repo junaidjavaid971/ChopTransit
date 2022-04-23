@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="paymentSheetLayout"
+            type="app.com.choptransit.viewmodels.PassengerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/BottomSheetDialogStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottomlayout_shape"
+        android:orientation="vertical"
+        android:padding="@dimen/_5sdp">
+
+        <ImageView
+            android:id="@+id/ivCancel"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_cross"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/tvHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/roboto_regular"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/str_addPaymentInformation"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/ivCancel"
+            app:layout_constraintTop_toBottomOf="@id/ivCancel" />
+
+        <TextView
+            android:id="@+id/tvCardInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/roboto_regular"
+            android:padding="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:text="@string/card_information"
+            app:layout_constraintStart_toStartOf="@id/ivCancel"
+            app:layout_constraintTop_toBottomOf="@id/tvHeading" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:elevation="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@id/btnAddCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvCardInfo"
+            app:layout_constraintTop_toBottomOf="@id/tvCardInfo">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCardHolderName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:drawableStart="@drawable/ic_name_card"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:drawableTint="@color/black"
+                    android:hint="@string/str_cardHolderName"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@={paymentSheetLayout.cardObserverModel.cardHolderName}"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#c5c5c5"
+                    app:layout_constraintTop_toBottomOf="@id/etCardHolderName" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@null"
+                    android:digits="1023456789 "
+                    android:drawableStart="@drawable/ic_credit_card"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="@string/str_cardNumber"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@={paymentSheetLayout.cardObserverModel.cardNumber}"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintTop_toBottomOf="@id/etCardHolderName"
+                    tools:layout_editor_absoluteX="-17dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#c5c5c5"
+                    app:layout_constraintTop_toBottomOf="@id/etCardNumber" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etExpiry"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@null"
+                    android:drawableStart="@drawable/ic_date"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="MM/YY"
+                    android:inputType="phone"
+                    android:maxLength="5"
+                    android:imeOptions="actionNext"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@={paymentSheetLayout.cardObserverModel.expiry}"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toStartOf="@id/etCVC"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etCardNumber" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="#c5c5c5"
+                    app:layout_constraintBottom_toBottomOf="@id/etExpiry"
+                    app:layout_constraintStart_toEndOf="@id/etExpiry"
+                    app:layout_constraintTop_toTopOf="@id/etExpiry" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCVC"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@null"
+                    android:digits="1023456789"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:imeOptions="actionDone"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="CVC"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@={paymentSheetLayout.cardObserverModel.cvc}"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/etExpiry"
+                    app:layout_constraintTop_toBottomOf="@id/etCardNumber" />
+
+
+                <TextView
+                    android:id="@+id/tvError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/etExpiry"
+                    app:layout_constraintTop_toBottomOf="@id/etCVC" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/btnAddCard"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:background="@drawable/btnshape_signin"
+            android:backgroundTint="@color/primaryColor"
+            android:gravity="center"
+            android:text="@string/str_addCard"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.com.choptransit">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".ChopApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/applogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/applogo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ChopTransit"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="ui.activities.RideHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.AddCardActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.PaymentMethodsActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ui.activities.ShowBookingDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.TripsActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.RideBookActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.ShowRouteDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.SearchRouteActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="ui.activities.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name="ui.activities.BookingQRCodeActivity"
+            android:exported="true" />
+        <activity
+            android:name="ui.activities.LoginActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAvCJARyieO_JjDsyIqA2dNbxbHxf8XV8g" />
+    </application>
+
+</manifest>

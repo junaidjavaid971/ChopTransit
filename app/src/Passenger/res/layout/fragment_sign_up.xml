@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="signupViewModel"
+            type="app.com.choptransit.viewmodels.AuthViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="ui.fragments.LoginFragment">
+
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="@string/str_enterPhoneNumberToSignup"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@id/layoutPhoneNumber"
+            app:layout_constraintStart_toStartOf="@id/layoutPhoneNumber"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/layoutPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@drawable/rounded_corners"
+            android:gravity="center_vertical"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDesc">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_textSize="@dimen/_9ssp" />
+
+            <EditText
+                android:id="@+id/ed_mobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@android:color/transparent"
+                android:editable="false"
+                android:hint="@string/str_Phone"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:paddingStart="@dimen/_5sdp"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiOTP"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp"
+            android:visibility="gone"
+            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+            app:boxStrokeColor="@color/gray_opacity"
+            app:boxStrokeErrorColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutPhoneNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOTP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:digits="1234567890"
+                android:drawableLeft="@drawable/ic_phone"
+                android:drawablePadding="@dimen/_10sdp"
+                android:hint="@string/str_EnterOTP"
+                android:inputType="number"
+                android:maxLength="4"
+                android:padding="@dimen/_10sdp"
+                android:text="@={signupViewModel.loginModel.otp}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/btnOTP"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/btnshape_signin"
+            android:gravity="center"
+            android:onClick="@{() -> signupViewModel.validatePhoneNumber()}"
+            android:text="@string/str_getOTP"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/tiOTP"
+            app:layout_constraintStart_toStartOf="@+id/tiOTP"
+            app:layout_constraintTop_toBottomOf="@+id/tiOTP" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/verifyOtp"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/tv_shape"
+            android:onClick="@{() -> signupViewModel.verifyOTP()}"
+            android:text="@string/str_Proceed"
+            android:visibility="gone"
+            app:backgroundTint="@color/primaryColor"
+            app:layout_constraintEnd_toEndOf="@+id/tiOTP"
+            app:layout_constraintStart_toStartOf="@+id/tiOTP"
+            app:layout_constraintTop_toBottomOf="@+id/tiOTP" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

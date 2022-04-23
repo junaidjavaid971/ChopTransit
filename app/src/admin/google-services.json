@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "242490993079",
+    "project_id": "chop-chop-888cd",
+    "storage_bucket": "chop-chop-888cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242490993079:android:d14547d45bc9d62d486032",
+        "android_client_info": {
+          "package_name": "app.com.choptransit.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242490993079-9veq6tdh8u30rbp1v2u4767rbep5bk8i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.com.choptransit.admin",
+            "certificate_hash": "0c7a516581cf644c77940d1b4813939cec9ef41b"
+          }
+        },
+        {
+          "client_id": "242490993079-mpld0mp9riece4cfv7u1g9fbs2md96ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC_b7_DrHoC-4GLtFZ19tJKF7P4p2HaXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242490993079-mpld0mp9riece4cfv7u1g9fbs2md96ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

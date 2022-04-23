@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.com.choptransit">
+
+    <application
+        android:name=".ChopApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/applogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/applogo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ChopTransit"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="ui.activities.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ui.activities.ViewRouteDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.SelectBusActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.SelectRouteActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.AssignNewRouteActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.AssignedRoutesActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.ViewDriverDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.DriversActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.DriverRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.ViewCompanyDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.AddCompanyActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.CompaniesActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.ViewBusDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.AddBusActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.BusesActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.AdminDashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name="ui.activities.AddStopsActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.RoutesActivity"
+            android:exported="true" />
+        <activity
+            android:name="ui.activities.StopsActivity"
+            android:exported="true" />
+        <activity
+            android:name="ui.activities.SelectStopsActivity"
+            android:exported="false" />
+        <activity
+            android:name="ui.activities.AddRouteActivity"
+            android:exported="true" />
+        <activity
+            android:name="ui.activities.AdminLoginActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAvCJARyieO_JjDsyIqA2dNbxbHxf8XV8g" />
+    </application>
+
+</manifest>

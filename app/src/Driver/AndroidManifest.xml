@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/applogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/applogo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ChopTransit"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="app.com.choptransit.ui.activities.DriverRideHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="app.com.choptransit.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="app.com.choptransit.ui.activities.AssignedRouteDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="app.com.choptransit.ui.activities.PickPassengersActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="app.com.choptransit.ui.activities.RideRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name="app.com.choptransit.ui.activities.DriverMainActivity"
+            android:exported="false" />
+        <activity
+            android:name="app.com.choptransit.ui.activities.SelectCompanyActivity"
+            android:exported="false" />
+        <activity
+            android:name="app.com.choptransit.ui.activities.LoginSignupActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAvCJARyieO_JjDsyIqA2dNbxbHxf8XV8g" />
+    </application>
+
+</manifest>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/etCurrentLocation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:background="@drawable/location_btn_shape"
+                android:drawableStart="@drawable/ic_dot"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableTint="@color/primaryColor"
+                android:ems="10"
+                android:enabled="false"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="@string/str_YourCurrentLocation"
+                android:inputType="textPersonName"
+                android:padding="@dimen/_5sdp"
+                android:textSize="@dimen/_11ssp" />
+
+            <EditText
+                android:id="@+id/etDropOffLocation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:background="@drawable/location_btn_shape"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_dot"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableTint="#800080"
+                android:ems="10"
+                android:focusable="true"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="@string/str_YourDropOff"
+                android:inputType="textPersonName"
+                android:padding="@dimen/_5sdp"
+                android:textSize="@dimen/_13ssp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivMarker"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_35sdp"
+            android:src="@drawable/ic_pin_pointing_down"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPickLocation"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/tv_shape"
+            android:text="@string/str_pickLocation"
+            android:visibility="visible"
+            app:backgroundTint="@color/primaryColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
