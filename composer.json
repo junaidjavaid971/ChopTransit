@@ -1,0 +1,6 @@
+{
+    "require": {
+        "vonage/client": "^2.4",
+        "stripe/stripe-php": "^7.116"
+    }
+}
